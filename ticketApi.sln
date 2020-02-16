@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ticketApi", "ticketApi\ticketApi.csproj", "{B29A2167-EC4E-4B33-8FF7-564899F54840}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B29A2167-EC4E-4B33-8FF7-564899F54840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B29A2167-EC4E-4B33-8FF7-564899F54840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B29A2167-EC4E-4B33-8FF7-564899F54840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B29A2167-EC4E-4B33-8FF7-564899F54840}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D600192A-1048-4CD4-A677-EAC9A75D456C}
+	EndGlobalSection
+EndGlobal
