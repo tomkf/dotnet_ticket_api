@@ -71,31 +71,31 @@ namespace ticketApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Sections
-        [HttpPost]
-        public async Task<ActionResult<Section>> PostSection(Section section)
-        {
-            _context.Section.Add(section);
-            await _context.SaveChangesAsync();
+        //// POST: api/Sections
+        //[HttpPost]
+        //public async Task<ActionResult<Section>> PostSection(Section section)
+        //{
+        //    _context.Section.Add(section);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSection", new { id = section.SectionId }, section);
-        }
+        //    return CreatedAtAction("GetSection", new { id = section.SectionId }, section);
+        //}
 
-        // DELETE: api/Sections/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Section>> DeleteSection(int id)
-        {
-            var section = await _context.Section.FindAsync(id);
-            if (section == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Sections/5
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult<Section>> DeleteSection(int id)
+        //{
+        //    var section = await _context.Section.FindAsync(id);
+        //    if (section == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Section.Remove(section);
-            await _context.SaveChangesAsync();
+        //    _context.Section.Remove(section);
+        //    await _context.SaveChangesAsync();
 
-            return section;
-        }
+        //    return section;
+        //}
 
         private bool SectionExists(int id)
         {

@@ -71,31 +71,31 @@ namespace ticketApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Rows
-        [HttpPost]
-        public async Task<ActionResult<Row>> PostRow(Row row)
-        {
-            _context.Row.Add(row);
-            await _context.SaveChangesAsync();
+        //// POST: api/Rows
+        //[HttpPost]
+        //public async Task<ActionResult<Row>> PostRow(Row row)
+        //{
+        //    _context.Row.Add(row);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetRow", new { id = row.RowId }, row);
-        }
+        //    return CreatedAtAction("GetRow", new { id = row.RowId }, row);
+        //}
 
-        // DELETE: api/Rows/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Row>> DeleteRow(int id)
-        {
-            var row = await _context.Row.FindAsync(id);
-            if (row == null)
-            {
-                return NotFound();
-            }
+        //// DELETE: api/Rows/5
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult<Row>> DeleteRow(int id)
+        //{
+        //    var row = await _context.Row.FindAsync(id);
+        //    if (row == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Row.Remove(row);
-            await _context.SaveChangesAsync();
+        //    _context.Row.Remove(row);
+        //    await _context.SaveChangesAsync();
 
-            return row;
-        }
+        //    return row;
+        //}
 
         private bool RowExists(int id)
         {

@@ -82,20 +82,20 @@ namespace ticketApi.Controllers
         }
 
         // DELETE: api/EventSeats/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<EventSeat>> DeleteEventSeat(int id)
-        {
-            var eventSeat = await _context.EventSeat.FindAsync(id);
-            if (eventSeat == null)
-            {
-                return NotFound();
-            }
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult<EventSeat>> DeleteEventSeat(int id)
+        //{
+        //    var eventSeat = await _context.EventSeat.FindAsync(id);
+        //    if (eventSeat == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.EventSeat.Remove(eventSeat);
-            await _context.SaveChangesAsync();
+        //    _context.EventSeat.Remove(eventSeat);
+        //    await _context.SaveChangesAsync();
 
-            return eventSeat;
-        }
+        //    return eventSeat;
+        //}
 
         private bool EventSeatExists(int id)
         {
