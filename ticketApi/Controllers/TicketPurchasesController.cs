@@ -20,6 +20,9 @@ namespace ticketApi.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Return all TicketPurchase items.
+        /// </summary>
         // GET: api/TicketPurchases
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TicketPurchase>>> GetTicketPurchase()
@@ -27,6 +30,10 @@ namespace ticketApi.Controllers
             return await _context.TicketPurchase.ToListAsync();
         }
 
+        /// <summary>
+        /// Get a single TicketPurchase itme by id.
+        /// </summary> 
+        /// <param name="id"></param>
         // GET: api/TicketPurchases/5
         [HttpGet("{id}")]
         public async Task<ActionResult<TicketPurchase>> GetTicketPurchase(int id)
@@ -41,6 +48,22 @@ namespace ticketApi.Controllers
             return ticketPurchase;
         }
 
+        /// <summary>
+        /// Update a single TicketPurchase item by id.
+        /// </summary>
+        /// <remarks>
+        /// Format:
+        ///
+        ///     PUT /TicketPurchase
+        ///     {
+        ///        "PurchaseId": 1,
+        ///        "PaymentMethod": "card type",
+        ///        "PaymentAmount": 0.00,
+        ///        "ConfirmationCode": "comfirmcode1"
+        ///     }
+        /// </remarks> 
+        /// <param name="id"></param>
+        /// <param name="ticketPurchase"></param>
         // PUT: api/TicketPurchases/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTicketPurchase(int id, TicketPurchase ticketPurchase)
@@ -71,6 +94,26 @@ namespace ticketApi.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Creates a new TicketPurchase item.
+        /// </summary>
+        /// <remarks>
+        /// Format:
+        ///
+        ///     POST /TicketPurchase
+        ///     {
+        ///        "PurchaseId": 1,
+        ///        "PaymentMethod": "card type",
+        ///        "PaymentAmount": 0.00,
+        ///        "ConfirmationCode": "comfirmcode1"
+        ///     }
+        /// </remarks>
+        /// <param name="ticketPurchase"></param>
+        /// <returns>A newly created item</returns>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is not saved</response>
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         // POST: api/TicketPurchases
         [HttpPost]
         public async Task<ActionResult<TicketPurchase>> PostTicketPurchase(TicketPurchase ticketPurchase)
@@ -95,6 +138,10 @@ namespace ticketApi.Controllers
             return CreatedAtAction("GetTicketPurchase", new { id = ticketPurchase.PurchaseId }, ticketPurchase);
         }
 
+        /// <summary>
+        /// Deletes a TicketPurchase item by id.
+        /// </summary> 
+        /// <param name="id"></param>
         // DELETE: api/TicketPurchases/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<TicketPurchase>> DeleteTicketPurchase(int id)

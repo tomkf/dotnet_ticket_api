@@ -20,6 +20,9 @@ namespace ticketApi.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Return all Venue item.
+        /// </summary>
         // GET: api/Venues
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Venue>>> GetVenue()
@@ -27,6 +30,9 @@ namespace ticketApi.Controllers
             return await _context.Venue.ToListAsync();
         }
 
+        /// <summary>
+        /// Get a single Venue item by id.
+        /// </summary> 
         // GET: api/Venues/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Venue>> GetVenue(string id)
@@ -41,6 +47,19 @@ namespace ticketApi.Controllers
             return venue;
         }
 
+        /// <summary>
+        /// Update a single Venue item by id.
+        /// </summary> 
+        /// <remarks>
+        /// Format:
+        ///
+        ///     PUT /Venue
+        ///     {
+        ///        "VenueName": "Venue1",
+        ///        "Capacity": 200
+        ///     }
+        /// </remarks>
+        /// <param name="venue"></param>
         // PUT: api/Venues/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutVenue(string id, Venue venue)
@@ -71,6 +90,24 @@ namespace ticketApi.Controllers
             return NoContent();
         }
 
+        /// <summary>
+        /// Creates a Venue item.
+        /// </summary>
+        /// <remarks>
+        /// Format:
+        ///
+        ///     POST /Venue
+        ///     {
+        ///        "VenueName": "Venue1",
+        ///        "Capacity": 200
+        ///     }
+        /// </remarks> 
+        /// <param name="venue"></param>
+        /// <returns>Creates a new Venue item</returns>
+        /// <response code="201">Returns the newly created venue item</response>
+        /// <response code="400">Error, item not saved</response>
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         // POST: api/Venues
         [HttpPost]
         public async Task<ActionResult<Venue>> PostVenue(Venue venue)
@@ -95,6 +132,10 @@ namespace ticketApi.Controllers
             return CreatedAtAction("GetVenue", new { id = venue.VenueName }, venue);
         }
 
+
+        /// <summary>
+        /// Deletes a single Venue item by id.
+        /// </summary> 
         // DELETE: api/Venues/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Venue>> DeleteVenue(string id)

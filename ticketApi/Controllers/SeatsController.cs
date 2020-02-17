@@ -20,6 +20,9 @@ namespace ticketApi.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Retuns all Seat items.
+        /// </summary>
         // GET: api/Seats
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Seat>>> GetSeat()
@@ -27,6 +30,10 @@ namespace ticketApi.Controllers
             return await _context.Seat.ToListAsync();
         }
 
+        /// <summary>
+        /// Get a single Seat item by id.
+        /// </summary> 
+        /// <param name="id"></param>
         // GET: api/Seats/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Seat>> GetSeat(int id)
@@ -41,6 +48,22 @@ namespace ticketApi.Controllers
             return seat;
         }
 
+
+        /// <summary>
+        /// Update a single Seat item by id.
+        /// </summary>
+        /// <remarks>
+        /// Format:
+        ///
+        ///     PUT /Seat
+        ///     {
+        ///        "SeatId": 1,
+        ///        "Price": 0.00
+        ///        "RowId": 1
+        ///     }
+        /// </remarks> 
+        /// <param name="id"></param>
+        /// <param name="seat"></param>
         // PUT: api/Seats/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSeat(int id, Seat seat)
@@ -70,32 +93,6 @@ namespace ticketApi.Controllers
 
             return NoContent();
         }
-
-        // POST: api/Seats
-        //[HttpPost]
-        //public async Task<ActionResult<Seat>> PostSeat(Seat seat)
-        //{
-        //    _context.Seat.Add(seat);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetSeat", new { id = seat.SeatId }, seat);
-        //}
-
-        // DELETE: api/Seats/5
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<Seat>> DeleteSeat(int id)
-        //{
-        //    var seat = await _context.Seat.FindAsync(id);
-        //    if (seat == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.Seat.Remove(seat);
-        //    await _context.SaveChangesAsync();
-
-        //    return seat;
-        //}
 
         private bool SeatExists(int id)
         {

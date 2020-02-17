@@ -20,6 +20,10 @@ namespace ticketApi.Controllers
             _context = context;
         }
 
+
+        /// <summary>
+        /// Return all EventSeats.
+        /// </summary>
         // GET: api/EventSeats
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EventSeat>>> GetEventSeat()
@@ -27,6 +31,11 @@ namespace ticketApi.Controllers
             return await _context.EventSeat.ToListAsync();
         }
 
+
+        /// <summary>
+        /// Get single EventSeat by id.
+        /// </summary> 
+        /// <param name="id"></param>
         // GET: api/EventSeats/5
         [HttpGet("{id}")]
         public async Task<ActionResult<EventSeat>> GetEventSeat(int id)
@@ -41,6 +50,22 @@ namespace ticketApi.Controllers
             return eventSeat;
         }
 
+        /// <summary>
+        /// Update a single EventSeat by Id.
+        /// </summary>
+        /// <remarks>
+        /// Format:
+        ///
+        ///     PUT /EventSeat
+        ///     {
+        ///        "EventSeatId": 1,
+        ///        "SeatId": 1,
+        ///        "EventId": 1,
+        ///        "EventSeatPrice": 0.00
+        ///     }
+        /// </remarks> 
+        /// <param name="id"></param>
+        /// <param name="eventSeat"></param>
         // PUT: api/EventSeats/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEventSeat(int id, EventSeat eventSeat)
@@ -71,6 +96,27 @@ namespace ticketApi.Controllers
             return NoContent();
         }
 
+
+        /// <summary>
+        /// Create new EventSeat.
+        /// </summary>
+        /// <remarks>
+        /// Format:
+        ///
+        ///     POST /EventSeat
+        ///     {
+        ///        "EventSeatId": 1,
+        ///        "SeatId": 1,
+        ///        "EventId": 1,
+        ///        "EventSeatPrice": 0.00
+        ///     }
+        /// </remarks>
+        /// <param name="eventSeat"></param>
+        /// <returns>New EventSeat Item</returns>
+        /// <response code="201">Returns new EventSeat item </response>
+        /// <response code="400">Error EventSeat not saved.</response>
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         // POST: api/EventSeats
         [HttpPost]
         public async Task<ActionResult<EventSeat>> PostEventSeat(EventSeat eventSeat)
@@ -80,22 +126,6 @@ namespace ticketApi.Controllers
 
             return CreatedAtAction("GetEventSeat", new { id = eventSeat.EventSeatId }, eventSeat);
         }
-
-        // DELETE: api/EventSeats/5
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<EventSeat>> DeleteEventSeat(int id)
-        //{
-        //    var eventSeat = await _context.EventSeat.FindAsync(id);
-        //    if (eventSeat == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.EventSeat.Remove(eventSeat);
-        //    await _context.SaveChangesAsync();
-
-        //    return eventSeat;
-        //}
 
         private bool EventSeatExists(int id)
         {

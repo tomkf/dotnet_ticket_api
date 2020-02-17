@@ -20,6 +20,9 @@ namespace ticketApi.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Retunr all Section items.
+        /// </summary>
         // GET: api/Sections
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Section>>> GetSection()
@@ -27,6 +30,12 @@ namespace ticketApi.Controllers
             return await _context.Section.ToListAsync();
         }
 
+
+
+        /// <summary>
+        /// Get a single Section item by id.
+        /// </summary> 
+        /// <param name="id"></param>
         // GET: api/Sections/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Section>> GetSection(int id)
@@ -41,6 +50,22 @@ namespace ticketApi.Controllers
             return section;
         }
 
+
+        /// <summary>
+        /// Update a single Section item by id.
+        /// </summary> 
+        /// <remarks>
+        /// Format:
+        ///
+        ///     PUT /Section
+        ///     {
+        ///        "SectionId": 1,
+        ///        "SectionName": "Section1",
+        ///        "VenueName": "Venue1"
+        ///     }
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <param name="section"></param>
         // PUT: api/Sections/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutSection(int id, Section section)
@@ -70,32 +95,6 @@ namespace ticketApi.Controllers
 
             return NoContent();
         }
-
-        //// POST: api/Sections
-        //[HttpPost]
-        //public async Task<ActionResult<Section>> PostSection(Section section)
-        //{
-        //    _context.Section.Add(section);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetSection", new { id = section.SectionId }, section);
-        //}
-
-        //// DELETE: api/Sections/5
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<Section>> DeleteSection(int id)
-        //{
-        //    var section = await _context.Section.FindAsync(id);
-        //    if (section == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.Section.Remove(section);
-        //    await _context.SaveChangesAsync();
-
-        //    return section;
-        //}
 
         private bool SectionExists(int id)
         {

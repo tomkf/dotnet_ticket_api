@@ -20,6 +20,10 @@ namespace ticketApi.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Return all Rows.
+        /// </summary>
+        // GET: api/Rows
         // GET: api/Rows
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Row>>> GetRow()
@@ -27,6 +31,10 @@ namespace ticketApi.Controllers
             return await _context.Row.ToListAsync();
         }
 
+        /// <summary>
+        /// Get a specific Row by id.
+        /// </summary> 
+        /// <param name="id"></param>
         // GET: api/Rows/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Row>> GetRow(int id)
@@ -41,6 +49,21 @@ namespace ticketApi.Controllers
             return row;
         }
 
+        /// <summary>
+        /// Update a single Row by id.
+        /// </summary> 
+        /// <remarks>
+        /// Format:
+        ///
+        ///     PUT /Row
+        ///     {
+        ///        "RowId": 1,
+        ///        "RowName": "Row1",
+        ///        "SectionId": 1
+        ///     }
+        /// </remarks>
+        /// <param name="id"></param>
+        /// <param name="row"></param>
         // PUT: api/Rows/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRow(int id, Row row)
@@ -70,32 +93,6 @@ namespace ticketApi.Controllers
 
             return NoContent();
         }
-
-        //// POST: api/Rows
-        //[HttpPost]
-        //public async Task<ActionResult<Row>> PostRow(Row row)
-        //{
-        //    _context.Row.Add(row);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetRow", new { id = row.RowId }, row);
-        //}
-
-        //// DELETE: api/Rows/5
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<Row>> DeleteRow(int id)
-        //{
-        //    var row = await _context.Row.FindAsync(id);
-        //    if (row == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    _context.Row.Remove(row);
-        //    await _context.SaveChangesAsync();
-
-        //    return row;
-        //}
 
         private bool RowExists(int id)
         {

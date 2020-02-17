@@ -20,6 +20,11 @@ namespace ticketApi.Controllers
             _context = context;
         }
 
+        /// <summary>
+        /// Return all Events.
+        /// </summary>
+        // GET: api/Events
+
         // GET: api/Events
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Event>>> GetEvent()
@@ -27,6 +32,11 @@ namespace ticketApi.Controllers
             return await _context.Event.ToListAsync();
         }
 
+
+        /// <summary>
+        /// Return single event by id.
+        /// </summary> 
+        /// <param name="id"></param>
         // GET: api/Events/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Event>> GetEvent(int id)
@@ -41,6 +51,21 @@ namespace ticketApi.Controllers
             return @event;
         }
 
+        /// <summary>
+        /// Update a single event.
+        /// </summary>
+        /// <remarks>
+        ///  Format:
+        ///
+        ///     PUT /Event
+        ///     {
+        ///        "EventId": 1,
+        ///        "EventName": "Event1",
+        ///        "VenueName": "Venue1"
+        ///     }
+        /// </remarks> 
+        /// <param name="id"></param>
+        /// <param name="event"></param>
         // PUT: api/Events/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEvent(int id, Event @event)
@@ -71,6 +96,27 @@ namespace ticketApi.Controllers
             return NoContent();
         }
 
+
+
+        /// <summary>
+        /// Create new Event.
+        /// </summary>
+        /// <remarks>
+        ///  Format:
+        ///
+        ///     POST /Seat
+        ///     {
+        ///        "EventId": 1,
+        ///        "EventName": "Event1",
+        ///        "VenueName": "Venue1"
+        ///     }
+        /// </remarks> 
+        /// <param name="event"></param>
+        /// <returns>New Event item.</returns>
+        /// <response code="201">Returns the newly created Event item.</response>
+        /// <response code="400">Error, event is not saved</response>
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         // POST: api/Events
         [HttpPost]
         public async Task<ActionResult<Event>> PostEvent(Event @event)
@@ -83,11 +129,9 @@ namespace ticketApi.Controllers
 
 
         /// <summary>
-        /// Deletes a specific Event.
+        /// Deletes Event item by id.
         /// </summary> 
         /// <param name="id"></param>
-        /// 
-
         // DELETE: api/Events/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Event>> DeleteEvent(int id)
