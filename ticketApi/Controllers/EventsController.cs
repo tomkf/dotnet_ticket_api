@@ -81,6 +81,13 @@ namespace ticketApi.Controllers
             return CreatedAtAction("GetEvent", new { id = @event.EventId }, @event);
         }
 
+
+        /// <summary>
+        /// Deletes a specific Event.
+        /// </summary> 
+        /// <param name="id"></param>
+        /// 
+
         // DELETE: api/Events/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Event>> DeleteEvent(int id)
