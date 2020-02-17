@@ -29,6 +29,20 @@ namespace ticketApi
         {
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<dotnetapiContext>(options => options.UseSqlServer(connection));
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                    });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -46,6 +60,7 @@ namespace ticketApi
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
             app.UseMvc();
         }
     }
