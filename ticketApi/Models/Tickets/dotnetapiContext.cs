@@ -194,57 +194,6 @@ namespace ticketApi.Models.Tickets
                 entity.Property(e => e.Capacity).HasColumnName("capacity");
             });
 
-
-         //   //seed data:
-
-         //   //event: 
-         //   modelBuilder.Entity<Event>().HasData(
-         //       new { eventId = 1, EventName = "Comedy Fest", VenueName = "Cordoba Theater" },
-         //       new { eventId = 2, EventName = "Pink Floyd", VenueName = "Cordoba Theater" },
-         //       new { eventId = 3, EventName = "Live Debate", VenueName = "Cordoba Theater" },
-         //       new { eventId = 4, EventName = "Les Miserables", VenueName = "Cordoba Theater" },
-         //       new { eventId = 5, EventName = "Macbeth", VenueName = "Cordoba Theater" }
-         //   );
-
-         //   //venue:
-         //   modelBuilder.Entity<Venue>().HasData(
-         //       new { VenueName = "Cordoba Theater", Capacity = 250 }
-         //  );
-
-
-         //   //event seat:
-         //   //ticket purchase seat
-         //   modelBuilder.Entity<EventSeat>().HasData(
-         //       new { EventSeatId = 1, SeatId, EventId = 1, EventSeatPrice = 15}
-         //  );
-
-         //   //section:
-         //   //row
-         //   modelBuilder.Entity<Section>().HasData(
-         //       new { SectionId = 1, SectionName = "Front", VenueName = "Cordoba Theater" },
-         //       new { SectionId = 2, SectionName = "Middle", VenueName = "Cordoba Theater" },
-         //       new { SectionId = 3, SectionName = "Back", VenueName = "Cordoba Theater" }
-         //  );
-
-
-         //   //row:
-         //   //seat
-         //   modelBuilder.Entity<Row>().HasData(
-         //     new { RowId = 1, RowName = "Left", SectionId = 1},
-         //     new { RowId = 2, RowName = "Center", SectionId = 1 },
-         //     new { RowId = 3, RowName = "Right", SectionId = 1 },
-         //     new { RowId = 4, RowName = "Left", SectionId = 2 },
-         //     new { RowId = 5, RowName = "Center", SectionId = 2 },
-         //     new { RowId = 6, RowName = "Right", SectionId = 2 },
-         //     new { RowId = 7, RowName = "Left", SectionId = 3 },
-         //     new { RowId = 8, RowName = "Center", SectionId = 3 },
-         //     new { RowId = 9, RowName = "Right", SectionId = 3 }
-         //);
-
-         //   modelBuilder.Entity<Seat>().HasData(
-         //      new { SeatId, Price, RowId }
-         // );
-
         }
     }
 }
