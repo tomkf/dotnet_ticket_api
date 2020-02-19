@@ -16,3 +16,7 @@
 </br>
 
 <p>The API has been structured logically in such a way that while developers can add event and purcahse information to the database, they can not for example remove sections, rows, or other elements of the venue as these methods have not been exposed.</p>
+
+<h3> NOTE: </h3>
+<p> There is an unkown 500 error currently occuring on the server, however here it was a correct responce once pulled appears locally:</p>
+<img src="pulic_assets/200Responce.png">  
