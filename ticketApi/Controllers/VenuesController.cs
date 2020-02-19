@@ -53,7 +53,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     PUT /Venue
+        ///     PUT /Venues
         ///     {
         ///        "VenueName": "Venue1",
         ///        "Capacity": 200
@@ -96,7 +96,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     POST /Venue
+        ///     POST /Venues
         ///     {
         ///        "VenueName": "Venue1",
         ///        "Capacity": 200
