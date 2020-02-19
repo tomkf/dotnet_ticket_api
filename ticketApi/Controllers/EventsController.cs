@@ -24,8 +24,6 @@ namespace ticketApi.Controllers
         /// Return all Events.
         /// </summary>
         // GET: api/Events
-
-        // GET: api/Events
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Event>>> GetEvent()
         {
