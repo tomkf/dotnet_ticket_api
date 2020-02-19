@@ -55,7 +55,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     PUT /Row
+        ///     PUT /Rows
         ///     {
         ///        "RowId": 1,
         ///        "RowName": "Row1",

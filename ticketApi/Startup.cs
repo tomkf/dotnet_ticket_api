@@ -29,7 +29,7 @@ namespace ticketApi
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ticket API", Version = "v1", Description = "Ticket Purchase API",
-                    TermsOfService = new Uri(""),
+                    TermsOfService = new Uri("https://swagger.io/docs/specification/api-general-info/"),
                     Contact = new OpenApiContact
                     {
                         Name = "Thomas Ferris",
@@ -39,7 +39,7 @@ namespace ticketApi
                     License = new OpenApiLicense
                     {
                         Name = "Use under LICX",
-                        Url = new Uri("https://swagger.io/docs/specification/api-general-info/"),
+                        Url = new Uri("https://example.com/license"),
                     }
                 });
 

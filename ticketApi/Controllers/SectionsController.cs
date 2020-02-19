@@ -57,7 +57,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     PUT /Section
+        ///     PUT /Sections
         ///     {
         ///        "SectionId": 1,
         ///        "SectionName": "Section1",

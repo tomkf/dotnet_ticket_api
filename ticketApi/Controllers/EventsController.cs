@@ -102,7 +102,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         ///  Format:
         ///
-        ///     POST /Seat
+        ///     POST /Event
         ///     {
         ///        "EventId": 1,
         ///        "EventName": "Event1",

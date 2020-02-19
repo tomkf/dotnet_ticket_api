@@ -54,7 +54,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     PUT /TicketPurchase
+        ///     PUT /TicketPurchases
         ///     {
         ///        "PurchaseId": 1,
         ///        "PaymentMethod": "card type",
@@ -100,7 +100,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     POST /TicketPurchase
+        ///     POST /TicketPurchases
         ///     {
         ///        "PurchaseId": 1,
         ///        "PaymentMethod": "card type",

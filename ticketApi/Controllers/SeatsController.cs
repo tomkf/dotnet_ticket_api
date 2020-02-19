@@ -55,7 +55,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     PUT /Seat
+        ///     PUT /Seats
         ///     {
         ///        "SeatId": 1,
         ///        "Price": 0.00

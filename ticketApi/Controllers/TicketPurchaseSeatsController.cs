@@ -55,7 +55,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     PUT /TicketPurchaseSeat
+        ///     PUT /TicketPurchaseSeats
         ///     {
         ///        "PurchaseId": 1,
         ///        "EventSeatId": 1,
@@ -100,7 +100,7 @@ namespace ticketApi.Controllers
         /// <remarks>
         /// Format:
         ///
-        ///     POST /TicketPurchaseSeat
+        ///     POST /TicketPurchaseSeats
         ///     {
         ///        "PurchaseId": 1,
         ///        "EventSeatId": 1,
